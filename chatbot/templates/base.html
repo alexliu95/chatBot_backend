@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title> Admin Panel </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/component/pear/css/pear.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin/css/loader.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/admin/css/admin.css') }}"/>
+</head>
+<!-- 结 构 代 码 -->
+<body class="layui-layout-body pear-admin">
+<!-- 布 局 框 架 -->
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <!-- 顶 部 左 侧 功 能 -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="collaspe layui-nav-item"><a href="#" class="layui-icon layui-icon-shrink-right"></a></li>
+            <li class="refresh layui-nav-item"><a href="#" class="layui-icon layui-icon-refresh-1" title="刷新页面"
+                                                  loading=600></a></li>
+        </ul>
+        <!-- 顶 部 右 侧 菜 单 -->
+        <div id="control" class="layui-layout-control"></div>
+        <div id="control" class="layui-layout-control"></div>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <p><a href="/logout" style="color:black;">logout</a></p>
+            </li>
+        </ul>
+    </div>
+    <!-- 侧 边 区 域 -->
+    <div class="layui-side layui-bg-black">
+        <!-- 顶 部 图 标 -->
+        <div class="layui-logo">
+            <img class="logo"/>
+            <span class="title"></span>
+        </div>
+        <!-- 侧 边 菜 单 -->
+        <div class="layui-side-scroll">
+            <div id="sideMenu"></div>
+        </div>
+    </div>
+    <div class="layui-body">
+        {% block content %}{% endblock %}
+        <div id="content"></div>
+    </div>
+</div>
+<!-- 遮 盖 层 -->
+<div class="pear-cover"></div>
+<!-- 移 动 端 便 捷 操 作 -->
+<div class="pear-collasped-pe collaspe"><a href="#" class="layui-icon layui-icon-shrink-right"></a></div>
+<!-- 加 载 动 画-->
+<div class="loader-main">
+    <div class="loader"></div>
+</div>
+<!-- 依 赖 脚 本 -->
+</body>
+</html>

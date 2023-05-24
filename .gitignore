@@ -5,3 +5,4 @@ __pycache__
 gitrepo
 gitrepo.pub
 .env
+data.db
