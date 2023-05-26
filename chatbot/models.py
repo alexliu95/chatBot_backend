@@ -7,6 +7,7 @@ from sqlalchemy import UniqueConstraint
 #from langchain.chains.conversation.memory import CoversationBufferMemory
 from langchain import OpenAI
 from langchain.chains import ConversationChain
+import os
 
 class ChatMessage(db.Model):
     __tablename__ = 'chat_message'
@@ -37,7 +38,10 @@ class ChatMessage(db.Model):
     
     @classmethod
     def aichat(cls, **kwargs):
-        pass
+        openai_key = os.getenv('OPENAI_KEY', 'dev')
+        return {
+            'message':''
+        }
 
     @classmethod
     def get_recent_messages(cls, dialog_id, round=1):
